@@ -45,7 +45,7 @@ TextureImporter:
       213: -4905373646408764684
     second: old man bot_13
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -65,6 +65,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -74,8 +76,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -96,9 +98,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -467,6 +473,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      old man bot_0: -9096135094110550773
+      old man bot_9: -9057146369690632963
+      old man bot_11: 3066720787411536148
+      old man bot_4: 7418196582852929685
+      old man bot_3: -5962355627696014640
+      old man bot_5: 4441654586599967553
+      old man bot_13: -4905373646408764684
+      old man bot_6: 6905902965175142120
+      old man bot_12: 9094003305360309261
+      old man bot_10: 4497061759705877304
+      old man bot_2: -4327897993735909140
+      old man bot_7: 1299610729623401058
+      old man bot_8: -2140025356275133242
+      old man bot_1: -4566784702246456387
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
