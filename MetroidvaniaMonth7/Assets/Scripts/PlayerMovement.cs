@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     Vector2 playerScale;
     Animator animator;
+    private Vector2 moveVec;
 
 
     // Start is called before the first frame update
@@ -36,10 +38,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
+    
+    public void OnMove(InputValue input)
+    {
+        Vector2 inputVec = input.Get<Vector2>();
+        moveVec = new Vector3(inputVec.x, 0, inputVec.y);
+    }
     void MovePlayer()
     {
-        moveX = Input.GetAxis("Horizontal");
+        moveX = moveVec.x;
 
         move.MoveX(moveX);
         animator.SetFloat("PlayerMoveX", Mathf.Abs(moveX));

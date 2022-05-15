@@ -20,15 +20,22 @@ public class DialogInputController : MonoBehaviour,IDialogInput
         dialog = GetComponent<IWriteDialog>();
         type = GetComponent<ITypeCharacter>();
     }
+    
+
+    void OnDialogue()
+    {
+        if(active.IsActive && continueText.enabled)
+        {
+            CheckDialogLine();
+        }
+        
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         CheckContinueText();
-        if(active.IsActive && continueText.enabled && Input.GetKeyDown(KeyCode.Space))
-        {
-            CheckDialogLine();
-        }
     }
 
     void CheckContinueText()

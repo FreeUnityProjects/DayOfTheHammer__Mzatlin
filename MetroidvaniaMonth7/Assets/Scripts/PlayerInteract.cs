@@ -19,6 +19,14 @@ public class PlayerInteract : MonoBehaviour
     {
         charMove = GetComponent<ICharacterMovement>();
     }
+    
+    void OnInteract()
+    {
+        interact.IsInteracting = false;
+        interact.ProcessInteraction();
+        interact.ProcessHoverLeave();
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -33,12 +41,12 @@ public class PlayerInteract : MonoBehaviour
             {
                 interact.ProcessHover();
                 interact.IsInteracting = true;
-                if (Input.GetKeyDown(KeyCode.S))
-                {
-                    interact.IsInteracting = false;
-                    interact.ProcessInteraction();
-                    interact.ProcessHoverLeave();
-                }
+                // if (Input.GetKeyDown(KeyCode.S))
+                // {
+                //     interact.IsInteracting = false;
+                //     interact.ProcessInteraction();
+                //     interact.ProcessHoverLeave();
+                // }
             }
      
         }

@@ -23,6 +23,8 @@ namespace FMODUnity
         [AOT.MonoPInvokeCallback(typeof(FMOD.DEBUG_CALLBACK))]
         static FMOD.RESULT DEBUG_CALLBACK(FMOD.DEBUG_FLAGS flags, FMOD.StringWrapper file, int line, FMOD.StringWrapper func, FMOD.StringWrapper message)
         {
+            return FMOD.RESULT.OK;
+            
             if (flags == FMOD.DEBUG_FLAGS.ERROR)
             {
                 Debug.LogError(string.Format(("[FMOD] {0} : {1}"), (string)func, (string)message));

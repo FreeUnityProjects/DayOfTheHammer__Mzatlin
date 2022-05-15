@@ -62,16 +62,24 @@ public class ThrowHammer : MonoBehaviour, IThrow, IAbility
     }
 
 
+    void OnThrowHammer()
+    {
+        if (isAbilityInUse || playerState.IsPlayerReady())
+        {
+            Throw();
+        }
+        
+    }
     public void ThrowAttackTick()
     {
         if (isAbilityInUse || playerState.IsPlayerReady())
         {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-
-                Throw();
-
-            }
+            // if (Input.GetKeyDown(KeyCode.Q))
+            // {
+            //
+            //     Throw();
+            //
+            // }
 
             if (Vector3.Distance(transform.position, hammer.transform.position) > 5 && hammer.activeInHierarchy)
             {

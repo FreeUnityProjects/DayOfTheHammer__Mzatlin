@@ -39,19 +39,29 @@ public class ChargeHammerAttack : ChargeBase, IChargeAttack, IAbility
         animator = GetComponentInChildren<Animator>();
     }
 
+    void OnHammerCharge()
+    {
+        if (isAbilityInUse || playerState.IsPlayerReady())
+        {
+            isAbilityInUse = true;
+            holdDownTime += Time.deltaTime;
+        }
+        
+    }
+
     //This Tick method is called in the use ability function once per frame
     public void HammerChargeTick()
     {
 
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (isAbilityInUse || playerState.IsPlayerReady())
-            {
-                isAbilityInUse = true;
-                holdDownTime += Time.deltaTime;
-            }
-
-        }
+        // if (Input.GetKey(KeyCode.E))
+        // {
+        //     if (isAbilityInUse || playerState.IsPlayerReady())
+        //     {
+        //         isAbilityInUse = true;
+        //         holdDownTime += Time.deltaTime;
+        //     }
+        //
+        // }
         if (holdDownTime > .2f)
         {
             
@@ -96,7 +106,8 @@ public class ChargeHammerAttack : ChargeBase, IChargeAttack, IAbility
 
     protected override bool CanRelease()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        // if (Input.GetKeyUp(KeyCode.E))
+            if (false)
         {
 
             if (holdDownTime > timeToCharge)

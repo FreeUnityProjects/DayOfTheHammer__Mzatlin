@@ -24,6 +24,11 @@ public class Jump : MonoBehaviour
        
     }
 
+    void OnJump()
+    {
+        Debug.Log("Jump not properly handled!");
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -31,7 +36,7 @@ public class Jump : MonoBehaviour
         {
             _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
         }
-        else if (_rigidbody.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (_rigidbody.velocity.y > 0) // && !Input.GetButton("Jump"))
         {
             _rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.fixedDeltaTime;
         }

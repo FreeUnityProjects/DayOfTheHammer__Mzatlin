@@ -46,17 +46,26 @@ public class PlayerJump : MonoBehaviour, IJump, IGrounded
         }
     }
 
-    public void Jump()
+    void OnJump()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayerMask);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isGrounded)
         {
             animator.SetBool("IsJumping", true);
             jump.JumpMove(jumpPower);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Jump");
-
         }
+    }
+    public void Jump()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayerMask);
+
+        // if (Input.GetButtonDown("Jump") && isGrounded)
+        // {
+        //     animator.SetBool("IsJumping", true);
+        //     jump.JumpMove(jumpPower);
+        //     FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Jump");
+        //
+        // }
 
         if (isGrounded != wasGrounded)
         {

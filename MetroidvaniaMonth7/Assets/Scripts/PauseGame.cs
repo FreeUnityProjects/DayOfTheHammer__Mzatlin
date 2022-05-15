@@ -28,12 +28,9 @@ public class PauseGame : MonoBehaviour, IPause
     }
 
     // Update is called once per frame
-    void Update()
+    void OnEscape()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
-        }
+        TogglePause();
     }
 
     public void TogglePause()

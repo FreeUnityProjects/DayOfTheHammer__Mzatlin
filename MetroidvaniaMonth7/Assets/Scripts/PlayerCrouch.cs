@@ -23,16 +23,27 @@ public class PlayerCrouch : MonoBehaviour
         collider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnInteract()
     {
-        if (Input.GetKeyDown(KeyCode.S) && Physics2D.OverlapCircle(groundCheck.transform.position, 0.3f, platformMask))
+        if (Physics2D.OverlapCircle(groundCheck.transform.position, 0.3f, platformMask))
         {
-              playerState.isStopped = true;
-              StartCoroutine(FallDelay());
-        }
+            playerState.isStopped = true;
+            StartCoroutine(FallDelay());
             
+        }
+        
     }
+
+    // Update is called once per frame
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.S) && Physics2D.OverlapCircle(groundCheck.transform.position, 0.3f, platformMask))
+    //     {
+    //           playerState.isStopped = true;
+    //           StartCoroutine(FallDelay());
+    //     }
+    //         
+    // }
 
     IEnumerator FallDelay()
     {
