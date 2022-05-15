@@ -1,6 +1,8 @@
 # MetroidvaniaMonth7
 Day Of The Hammer
 
+Updated to 2021.3, but various problems, especially trying to integrate the new Input System.
+
 This was made during the month-long Metroidvania Game Jam using the theme of "Metroidvania."
 Created using the Unity Engine and C# Language. 
 
